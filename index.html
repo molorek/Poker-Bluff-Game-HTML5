@@ -1,0 +1,105 @@
+<script>
+ 	var game_orientation = "auto";	
+	var game_language = "auto";
+	var iTunesURL = "https://itunes.apple.com/us/";
+    var playStoreURL = "https://play.google.com/";
+    var params = {
+		timeOut: {value: 30000, description: 'Inactivity time out (5000 to 120000) in milliseconds'},
+		retries: {value: 3, description: 'Number of times player can replay'},
+		showTutorial: {value: true, description: 'Show tutorial phase?'},
+		bluffMinWin: {value: 0.4,0.4,0.4, description: 'undefined'},
+		bluffMaxWin: {value: 0.6,0.6,0.6, description: 'undefined'},
+		bluffLow: {value: 0.2,0.2,0.2, description: 'undefined'},
+		bluffHigh: {value: 0.8,0.8,0.8, description: 'undefined'},
+		timeMinWin: {value: 4,4,4, description: 'undefined'},
+		timeMaxWin: {value: 8,8,8, description: 'undefined'},
+		timeMinWinPerfect: {value: 5,5,5, description: 'undefined'},
+		timeMaxWinPerfect: {value: 6,6,6, description: 'undefined'},
+	};
+	var texts = {
+		cta: 'Call To Action',
+		retry: 'Replay',
+		nervous1: 'Nervous1',
+		nervous2: 'Nervous2',
+		tooLow1: 'TooLow1',
+		tooLow2: 'TooLow2',
+		wayTooLow1: 'WayTooLow1',
+		wayTooLow2: 'WayTooLow2',
+		tooHigh1: 'TooHigh1',
+		tooHigh2: 'TooHigh2',
+		wayTooHigh1: 'WayTooHigh1',
+		wayTooHigh2: 'WayTooHigh2',
+	};
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grimpanda Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=Edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Grimpanda Template">
+    <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />  	
+    <link rel="stylesheet" href="css/preloader.css">  
+	<link rel="stylesheet" href="../../../bamboo/css/style.css">  
+    <link rel="stylesheet" href="../../../bamboo/css/playbar.css">  
+    <link rel="stylesheet" href="../../fonts/fonts.css">  	
+	<script type="text/javascript" src="../../src/external/phaser.min.js"></script>
+	<script type="text/javascript" src="../../src/external/spriter.js"></script>
+	<script type="text/javascript" src="../../config.js"></script>	
+	<script type="text/javascript" src="../../info.js"></script>	    
+</head>
+
+<body>
+<script>
+	// Load Web Fonts
+	var fonts = ['BebasNeue Bold.otf', 'Lato-Reg.ttf', 'MyriadPro-Cond_0.otf', ];
+
+	var fontDiv = document.createElement('fonts-to-load');
+	document.body.appendChild(fontDiv);
+
+	for (var i = 0; i < fonts.length; i++) {
+		fonts[i] = fonts[i].substr(0, fonts[i].lastIndexOf('.'));
+
+		var div = document.createElement('font-div');
+		div.id = fonts[i];
+		div.style.fontFamily = fonts[i];
+		div.style.position = 'absolute';
+		div.style.top = 0;
+		div.style.left = 0;
+		div.style.visibility = 'hidden';
+		div.innerHTML = 'Hello world.';
+		fontDiv.appendChild(div);
+	}
+	
+	setTimeout(function() { document.body.removeChild(fontDiv); }, 500);
+</script>
+<div id="flip" class="off"></div>
+<div id="preloader">
+	<div id="particles-background" class="vertical-centered-box"></div>
+	<div id="particles-foreground" class="vertical-centered-box"></div>
+
+	<div class="vertical-centered-box">
+		<div id ="gm_loader" class="content">
+			<div class="title">Grimpanda Template</div>
+			<div id ="gm_loader_text" class="loading">Loading</div>
+			<div class="loader-circle"></div>
+			<div class="loader-line-mask">
+				<div class="loader-line"></div>
+			</div>
+			<div class="logo"></div>
+		</div>	  
+	</div>  
+    <script src="preloader.js"></script>
+</div>
+<div id="content"></div>
+<script type="module" src="../../src/main.js"></script>
+<script type="text/javascript" src="developer.source.js"></script></body>
+</html>
